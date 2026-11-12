@@ -1,0 +1,25 @@
+{
+  "card_transaction_event_id": "…9076",
+  "card_transaction_id": "…9ef5",
+  "card_transaction_lifecycle_id": "…163d",
+  "type": "REVERSAL_AUTH",
+  "subtype": "REVERSAL",
+  "process_result": "APPROVED",
+  "transacted_at": "2026-11-12T13:17:50.892+0000",
+  "updated_at": "2026-11-12T13:17:51.626+0000",
+  "card_id": "…c03c",
+  "transaction_amount": 180,
+  "transaction_currency": "USD",
+  "billing_amount": 180,
+  "billing_currency": "USD",
+  "merchant": {
+    "name": "DataCo___________________",
+    "city": "_____________",
+    "country": "",
+    "category_code": "5734"
+  },
+  "auth_code": "COXA61",
+  "retrieval_ref": "990762316292",
+  "masked_card_number": "************9263",
+  "network_transaction_id": "[digits removed]"
+}

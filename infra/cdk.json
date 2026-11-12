@@ -1,0 +1,11 @@
+{
+  "app": "bun bin/writ.ts",
+  "output": "cdk.out",
+  "requireApproval": "broadening",
+  "context": {
+    "@aws-cdk/core:defaultCrossStackReferences": "strong",
+    "taintKeyId": "d2517670-179b-4a02-ad1e-450aaa1f9caf",
+    "agentModelProvider": "bedrock",
+    "agentModelId": "us.amazon.nova-pro-v1:0"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "step": "swipe_mcc_5999",
+  "recorded_at": "2026-11-09T10:42:38.680Z",
+  "exchanges": [
+    {
+      "method": "POST",
+      "path": "/api/v1/simulation/issuing/create",
+      "status": 201,
+      "requestBody": {
+        "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+        "transaction_amount": 10,
+        "transaction_currency": "USD",
+        "merchant_category_code": "5999",
+        "merchant_info": "WRIT PROBE SOFTWARE"
+      },
+      "responseBody": {
+        "card_transaction_event_id": "01a1bfe7-16eb-7000-a66d-51f36b5a2df2",
+        "card_transaction_id": "01a1bfe7-16eb-7000-aeee-d765ec0d07d9",
+        "card_transaction_lifecycle_id": "01a1bfe7-16eb-7000-9483-56763c178b5e",
+        "type": "AUTHORIZATION",
+        "subtype": "AUTHORIZATION",
+        "process_result": "DECLINED",
+        "transacted_at": "2026-11-09T10:42:35.371+0000",
+        "updated_at": "2026-11-09T10:42:36.200+0000",
+        "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+        "transaction_amount": 10,
+        "transaction_currency": "USD",
+        "billing_amount": 10,
+        "billing_currency": "USD",
+        "merchant": {
+          "name": "WRIT PROBE SOFTWARE______",
+          "city": "_____________",
+          "country": "",
+          "category_code": "5999"
+        },
+        "auth_code": "CBNWHQ",
+        "retrieval_ref": "388865772334",
+        "masked_card_number": "************1803",
+        "failure_reason": "MERCHANT_CATEGORY_NOT_ALLOWED",
+        "network_transaction_id": "[digits removed]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Writ</title>
+    <link rel="stylesheet" href="/console.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Writ</h1>
+      <span class="badge" data-badge="frozen">Frozen card</span>
+      <p class="lede">Each agent has a card. Spend still has to match a signed writ, the team pool, and the cash reserve.</p>
+    </header>
+    <main>
+      <section id="events" class="panel" data-panel="events">
+        <h2>Event stream</h2>
+        <ol id="event-list"></ol>
+      </section>
+      <section id="pool" class="panel" data-panel="pool">
+        <h2>Team pool</h2>
+        <p id="pool-label" class="muted">Waiting for the demo.</p>
+        <div class="bar" id="pool-bar" aria-label="team pool">
+          <span class="seg settled" id="pool-settled"></span>
+          <span class="seg pending" id="pool-pending"></span>
+          <span class="seg reserved" id="pool-reserved"></span>
+        </div>
+        <ul class="legend" id="pool-legend"></ul>
+      </section>
+      <section id="reserve" class="panel" data-panel="reserve">
+        <h2>Cash reserve</h2>
+        <p id="reserve-label" class="muted">Waiting for the demo.</p>
+        <div class="gauge" id="reserve-gauge">
+          <div class="gauge-fill" id="reserve-fill"></div>
+          <div class="gauge-mark" id="reserve-floor-mark"></div>
+        </div>
+        <p id="reserve-note" class="muted"></p>
+      </section>
+      <section id="approval" class="panel" data-panel="approval">
+        <h2>Approval</h2>
+        <dl id="approval-fields">
+          <dt>Status</dt>
+          <dd>No writ yet.</dd>
+        </dl>
+      </section>
+      <section id="final" class="panel" data-panel="final">
+        <h2>Final state</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Scene</th>
+              <th>Agent</th>
+              <th>Task</th>
+              <th>Amount</th>
+              <th>Result</th>
+              <th>Reason</th>
+            </tr>
+          </thead>
+          <tbody id="final-body">
+            <tr>
+              <td colspan="6" class="muted">Run <code>bun run demo</code> or <code>bun run demo --replay</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <script src="/console.js"></script>
+  </body>
+</html>

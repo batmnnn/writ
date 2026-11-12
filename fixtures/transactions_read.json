@@ -1,0 +1,218 @@
+{
+  "step": "transactions_read",
+  "recorded_at": "2026-11-09T10:42:39.194Z",
+  "exchanges": [
+    {
+      "method": "GET",
+      "path": "/api/v1/issuing/transactions?card_id=6ee295c1-0bca-4483-919c-d8bc9fd1fa3f&from_created_at=2026-11-09T09%3A42%3A38%2B0000&page_size=50&page_num=0",
+      "status": 200,
+      "responseBody": {
+        "has_more": false,
+        "items": [
+          {
+            "acquiring_institution_identifier": "37929892335",
+            "auth_code": "8PR0ZP",
+            "billing_amount": -40,
+            "billing_currency": "USD",
+            "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+            "card_nickname": "",
+            "card_transaction_data": {
+              "card_transaction_event_id": "01a1bfe6-dde2-7000-9f7d-ad75bc4ac9c4",
+              "card_transaction_id": "01a1bfe6-cffb-7000-9bae-f38161402287",
+              "card_transaction_lifecycle_id": "01a1bfe6-cffb-7000-8598-ef4b9a0ffbfc"
+            },
+            "masked_card_number": "************1803",
+            "matched_authorizations": [
+              "4b86798e-a92d-49fb-b193-d0aaa4641d5b"
+            ],
+            "merchant": {
+              "additional_merchant_info": {
+                "merchant_category": "Software",
+                "merchant_sub_category": "Software Services"
+              },
+              "category_code": "7531",
+              "city": "_____________",
+              "country": "",
+              "identifier": "[digits removed]",
+              "name": "WRIT PROBE SOFTWARE______"
+            },
+            "network_transaction_id": "[digits removed]",
+            "posted_date": "2026-11-09T10:42:20.770+0000",
+            "retrieval_ref": "629579287200",
+            "risk_details": {
+              "risk_actions_performed": [],
+              "risk_factors": [],
+              "three_dsecure_outcome": "NOT_APPLICABLE"
+            },
+            "status": "APPROVED",
+            "transaction_amount": -40,
+            "transaction_currency": "USD",
+            "transaction_date": "2026-11-09T10:42:17.769+0000",
+            "transaction_id": "d16d9866-07d8-4bc9-ab4d-1811959eb866",
+            "transaction_type": "CLEARING"
+          },
+          {
+            "acquiring_institution_identifier": "52906284676",
+            "auth_code": "4WH2RL",
+            "billing_amount": -60,
+            "billing_currency": "USD",
+            "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+            "card_nickname": "",
+            "card_transaction_data": {
+              "card_transaction_event_id": "01a1bfe6-f040-7000-bcc3-1ea79a193b34",
+              "card_transaction_id": "01a1bfe6-f040-7000-bdaa-e1cb9a29683c",
+              "card_transaction_lifecycle_id": "01a1bfe6-f040-7000-90a4-8078d451b19a"
+            },
+            "failure_reason": "LIMIT_EXCEEDED",
+            "masked_card_number": "************1803",
+            "merchant": {
+              "additional_merchant_info": {
+                "merchant_category": "Software",
+                "merchant_sub_category": "Software Services"
+              },
+              "category_code": "5734",
+              "city": "_____________",
+              "country": "",
+              "identifier": "[digits removed]",
+              "name": "WRIT PROBE SOFTWARE______"
+            },
+            "network_transaction_id": "[digits removed]",
+            "posted_date": "2026-11-09T10:42:25.472+0000",
+            "retrieval_ref": "088792982430",
+            "risk_details": {
+              "risk_actions_performed": [],
+              "risk_factors": [],
+              "three_dsecure_outcome": "NOT_APPLICABLE"
+            },
+            "status": "FAILED",
+            "transaction_amount": -60,
+            "transaction_currency": "USD",
+            "transaction_date": "2026-11-09T10:42:25.472+0000",
+            "transaction_id": "1cce9c1c-d0e1-4f2a-8c0d-439686fa08f5",
+            "transaction_type": "AUTHORIZATION"
+          },
+          {
+            "acquiring_institution_identifier": "96584129511",
+            "auth_code": "UQRWAA",
+            "billing_amount": -50,
+            "billing_currency": "USD",
+            "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+            "card_nickname": "",
+            "card_transaction_data": {
+              "card_transaction_event_id": "01a1bfe6-fa8a-7000-b836-fbb44d5538db",
+              "card_transaction_id": "01a1bfe6-fa8a-7000-8770-11483850670f",
+              "card_transaction_lifecycle_id": "01a1bfe6-fa8a-7000-ab01-7351b8d535c6"
+            },
+            "failure_reason": "LIMIT_EXCEEDED",
+            "masked_card_number": "************1803",
+            "merchant": {
+              "additional_merchant_info": {
+                "merchant_category": "Software",
+                "merchant_sub_category": "Software Services"
+              },
+              "category_code": "5734",
+              "city": "_____________",
+              "country": "",
+              "identifier": "[digits removed]",
+              "name": "WRIT PROBE SOFTWARE______"
+            },
+            "network_transaction_id": "[digits removed]",
+            "posted_date": "2026-11-09T10:42:28.106+0000",
+            "retrieval_ref": "780667953196",
+            "risk_details": {
+              "risk_actions_performed": [],
+              "risk_factors": [],
+              "three_dsecure_outcome": "NOT_APPLICABLE"
+            },
+            "status": "FAILED",
+            "transaction_amount": -50,
+            "transaction_currency": "USD",
+            "transaction_date": "2026-11-09T10:42:28.106+0000",
+            "transaction_id": "9573b39a-9482-4065-b884-156c60995762",
+            "transaction_type": "AUTHORIZATION"
+          },
+          {
+            "acquiring_institution_identifier": "85630370680",
+            "auth_code": "X7XIAC",
+            "billing_amount": -10,
+            "billing_currency": "USD",
+            "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+            "card_nickname": "",
+            "card_transaction_data": {
+              "card_transaction_event_id": "01a1bfe7-0897-7000-b498-c0f7e22289c0",
+              "card_transaction_id": "01a1bfe7-0897-7000-8f39-d6283f91485e",
+              "card_transaction_lifecycle_id": "01a1bfe7-0897-7000-83a6-cb7b40d6ee2e"
+            },
+            "failure_reason": "CARD_INACTIVE",
+            "masked_card_number": "************1803",
+            "merchant": {
+              "additional_merchant_info": {
+                "merchant_category": "Software",
+                "merchant_sub_category": "Software Services"
+              },
+              "category_code": "5734",
+              "city": "_____________",
+              "country": "",
+              "identifier": "[digits removed]",
+              "name": "WRIT PROBE SOFTWARE______"
+            },
+            "network_transaction_id": "[digits removed]",
+            "posted_date": "2026-11-09T10:42:31.703+0000",
+            "retrieval_ref": "119446042137",
+            "risk_details": {
+              "risk_actions_performed": [],
+              "risk_factors": [],
+              "three_dsecure_outcome": "NOT_APPLICABLE"
+            },
+            "status": "FAILED",
+            "transaction_amount": -10,
+            "transaction_currency": "USD",
+            "transaction_date": "2026-11-09T10:42:31.703+0000",
+            "transaction_id": "97f32c14-5776-4c7b-b3a8-0ba0551ccc77",
+            "transaction_type": "AUTHORIZATION"
+          },
+          {
+            "acquiring_institution_identifier": "66458094177",
+            "auth_code": "CBNWHQ",
+            "billing_amount": -10,
+            "billing_currency": "USD",
+            "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+            "card_nickname": "",
+            "card_transaction_data": {
+              "card_transaction_event_id": "01a1bfe7-16eb-7000-a66d-51f36b5a2df2",
+              "card_transaction_id": "01a1bfe7-16eb-7000-aeee-d765ec0d07d9",
+              "card_transaction_lifecycle_id": "01a1bfe7-16eb-7000-9483-56763c178b5e"
+            },
+            "failure_reason": "MERCHANT_CATEGORY_NOT_ALLOWED",
+            "masked_card_number": "************1803",
+            "merchant": {
+              "additional_merchant_info": {
+                "merchant_category": "Professional Services",
+                "merchant_sub_category": "Other Professional Services"
+              },
+              "category_code": "5999",
+              "city": "_____________",
+              "country": "",
+              "identifier": "[digits removed]",
+              "name": "WRIT PROBE SOFTWARE______"
+            },
+            "network_transaction_id": "[digits removed]",
+            "posted_date": "2026-11-09T10:42:35.371+0000",
+            "retrieval_ref": "388865772334",
+            "risk_details": {
+              "risk_actions_performed": [],
+              "risk_factors": [],
+              "three_dsecure_outcome": "NOT_APPLICABLE"
+            },
+            "status": "FAILED",
+            "transaction_amount": -10,
+            "transaction_currency": "USD",
+            "transaction_date": "2026-11-09T10:42:35.371+0000",
+            "transaction_id": "349ce368-826f-40fc-8ad8-9e031a73d9f0",
+            "transaction_type": "AUTHORIZATION"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "step": "swipe_50_after_rearm",
+  "recorded_at": "2026-11-09T10:42:31.111Z",
+  "exchanges": [
+    {
+      "method": "POST",
+      "path": "/api/v1/simulation/issuing/create",
+      "status": 201,
+      "requestBody": {
+        "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+        "transaction_amount": 50,
+        "transaction_currency": "USD",
+        "merchant_category_code": "5734",
+        "merchant_info": "WRIT PROBE SOFTWARE"
+      },
+      "responseBody": {
+        "card_transaction_event_id": "01a1bfe6-fa8a-7000-b836-fbb44d5538db",
+        "card_transaction_id": "01a1bfe6-fa8a-7000-8770-11483850670f",
+        "card_transaction_lifecycle_id": "01a1bfe6-fa8a-7000-ab01-7351b8d535c6",
+        "type": "AUTHORIZATION",
+        "subtype": "AUTHORIZATION",
+        "process_result": "DECLINED",
+        "transacted_at": "2026-11-09T10:42:28.106+0000",
+        "updated_at": "2026-11-09T10:42:28.597+0000",
+        "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+        "transaction_amount": 50,
+        "transaction_currency": "USD",
+        "billing_amount": 50,
+        "billing_currency": "USD",
+        "merchant": {
+          "name": "WRIT PROBE SOFTWARE______",
+          "city": "_____________",
+          "country": "",
+          "category_code": "5734"
+        },
+        "auth_code": "UQRWAA",
+        "retrieval_ref": "780667953196",
+        "masked_card_number": "************1803",
+        "failure_reason": "LIMIT_EXCEEDED",
+        "network_transaction_id": "[digits removed]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "alert_settings": {
+    "low_remaining_transaction_limit": {
+      "enabled": true,
+      "percent": 10
+    }
+  },
+  "authorization_controls": {
+    "allowed_currencies": [
+      "USD"
+    ],
+    "allowed_merchant_brands": {
+      "categories": [],
+      "ids": [],
+      "subcategories": []
+    },
+    "allowed_merchant_categories": [
+      "5734"
+    ],
+    "allowed_merchant_countries": [],
+    "allowed_transaction_count": "MULTIPLE",
+    "blocked_transaction_usages": [],
+    "transaction_limits": {
+      "currency": "USD",
+      "limits": [
+        {
+          "amount": 1,
+          "interval": "PER_TRANSACTION"
+        },
+        {
+          "amount": 1,
+          "interval": "ALL_TIME"
+        }
+      ]
+    }
+  },
+  "brand": "VISA",
+  "card_id": "bc2f4c9d-a615-4e34-a3da-eb1a02664dcc",
+  "card_status": "PENDING",
+  "cardholder_id": "9074f250-c6cf-4758-bfce-481f8d14d135",
+  "created_at": "2026-11-09T10:10:03.225+0000",
+  "created_by": "Writ Probe",
+  "form_factor": "VIRTUAL",
+  "is_personalized": true,
+  "metadata": {
+    "agent": "probe",
+    "team": "probe"
+  },
+  "program": {
+    "purpose": "COMMERCIAL",
+    "sub_type": "GOOD_FUNDS_CREDIT",
+    "type": "CREDIT"
+  },
+  "request_id": "05a30fe9-da7e-4274-980d-1e24d0d73168",
+  "updated_at": "2026-11-09T10:10:03.225+0000"
+}

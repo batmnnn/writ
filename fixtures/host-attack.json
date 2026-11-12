@@ -1,0 +1,28 @@
+{
+  "at": "Thu Nov 12, 18:46 IST",
+  "atIso": "2026-11-12T13:16:12.429Z",
+  "host": "35-95-168-131.sslip.io",
+  "pcr0": "a4e822683624b9254556e3326a51e2ef4c9a60bff97124161e4ac94f75b8595e16b42bb855a192555f36e7b9bf0ee98a",
+  "flags": "NONE",
+  "enclaveId": "i-09a55b84452a2b666-enc1a1cfe6a47d65a1",
+  "options": {
+    "withDebug": true,
+    "withRestart": false,
+    "allowLedgerWrite": false,
+    "signedWrit": false
+  },
+  "lines": [
+    "FAILED read-key: scanned env of 39 processes and 824 files under /opt/writ /etc /root /home: no Airwallex key; Secrets Manager holds KMS ciphertext only: ciphertext 252 bytes, raCiphertext 184 bytes, clientId (an identifier, not a key)",
+    "FAILED kms-decrypt: ciphertext: AccessDeniedException, raCiphertext: AccessDeniedException",
+    "FAILED enclave-memory: enclave Flags NONE: nitro-cli console refused (exit 44), /dev/mem read refused (ENOENT)",
+    "FAILED ra-guessed-signature: HTTP 200 DECLINED \"bad signature\"",
+    "FAILED ra-capture: 15260 bytes relayed, GET attestation HTTP 200, POST remote-auth HTTP 200; TLS records only, no \"POST /\", \"HTTP/1.1\" or card_transaction_event_id; capture deleted",
+    "FAILED writ-forged-key: HTTP 200 DECLINED WRIT_BAD_SIGNATURE, no arm",
+    "SKIPPED writ-edited-amount: needs --signed-writ <path> (a spare writ the real approver signed)",
+    "FAILED checkpoint-delete-overwrite: checkpoints/v2/000000000001.json: delete AccessDenied, delete version AccessDenied, shorten lock AccessDenied, overwrite PreconditionFailed; etag unchanged",
+    "SKIPPED ledger-forge: needs --allow-ledger-write: it writes one object under checkpoints/v2/ that Object Lock keeps for 30 days",
+    "FAILED debug-unseal: debug Flags not read, debug PCR0 not read, vsock reply none, console DECLINED PCR_ZERO; production Flags NONE; KMS Decrypt needs ImageSha384 equal to the published PCR0, zeros never match",
+    "FAILED production-restart: production back, Flags NONE, PCR0 a4e822683624b9254556e3326a51e2ef4c9a60bff97124161e4ac94f75b8595e16b42bb855a192555f36e7b9bf0ee98a"
+  ],
+  "exitCode": 0
+}

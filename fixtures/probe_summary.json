@@ -1,0 +1,73 @@
+{
+  "card_start_status": "PENDING",
+  "status_trail": [
+    "PENDING",
+    "PENDING",
+    "ACTIVE"
+  ],
+  "remote_auth_settings_present": false,
+  "per_transaction_max_minor": 5000000,
+  "all_time_counts_old_spend": "yes",
+  "rows": [
+    {
+      "step": "issuing config",
+      "expected": "read",
+      "got": "RA absent",
+      "ok": "info"
+    },
+    {
+      "step": "balance",
+      "expected": "read",
+      "got": "$9,999,957",
+      "ok": "info"
+    },
+    {
+      "step": "card create",
+      "expected": "ACTIVE then INACTIVE",
+      "got": "PENDING>PENDING>ACTIVE>INACTIVE",
+      "ok": "info"
+    },
+    {
+      "step": "swipe 40 (armed 50)",
+      "expected": "AUTHORIZED",
+      "got": "AUTHORIZED",
+      "ok": true
+    },
+    {
+      "step": "capture 40",
+      "expected": "PASS",
+      "got": "PASS",
+      "ok": true
+    },
+    {
+      "step": "swipe 60 (armed 50)",
+      "expected": "LIMIT_EXCEEDED",
+      "got": "LIMIT_EXCEEDED",
+      "ok": true
+    },
+    {
+      "step": "swipe 50 after rearm 50",
+      "expected": "info",
+      "got": "LIMIT_EXCEEDED (ALL_TIME counts old spend: yes)",
+      "ok": "info"
+    },
+    {
+      "step": "swipe 10 (disarmed)",
+      "expected": "CARD_INACTIVE",
+      "got": "CARD_INACTIVE",
+      "ok": true
+    },
+    {
+      "step": "swipe MCC 5999 (armed 5734)",
+      "expected": "MERCHANT_CATEGORY_NOT_ALLOWED",
+      "got": "MERCHANT_CATEGORY_NOT_ALLOWED",
+      "ok": true
+    },
+    {
+      "step": "read transactions",
+      "expected": "read",
+      "got": "latest MERCHANT_CATEGORY_NOT_ALLOWED",
+      "ok": "info"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "step": "issuing_config_call",
+  "recorded_at": "2026-11-09T10:42:12.982Z",
+  "exchanges": [
+    {
+      "method": "GET",
+      "path": "/api/v1/issuing/config",
+      "status": 200,
+      "responseBody": {
+        "blocked_transaction_usages": [],
+        "enable_auto_conversion": true,
+        "primary_currency": "USD",
+        "spending_limit_settings": {
+          "per_transaction_limits": [
+            {
+              "currency": "USD",
+              "default": 10000,
+              "maximum": 50000
+            },
+            {
+              "currency": "AUD",
+              "default": 15000,
+              "maximum": 75000
+            },
+            {
+              "currency": "GBP",
+              "default": 10000,
+              "maximum": 50000
+            },
+            {
+              "currency": "EUR",
+              "default": 10000,
+              "maximum": 50000
+            },
+            {
+              "currency": "CNY",
+              "default": 100000,
+              "maximum": 500000
+            },
+            {
+              "currency": "HKD",
+              "default": 100000,
+              "maximum": 500000
+            },
+            {
+              "currency": "SGD",
+              "default": 15000,
+              "maximum": 75000
+            },
+            {
+              "currency": "NZD",
+              "default": 15000,
+              "maximum": 75000
+            },
+            {
+              "currency": "JPY",
+              "default": 1500000,
+              "maximum": 7500000
+            },
+            {
+              "currency": "CAD",
+              "default": 15000,
+              "maximum": 75000
+            },
+            {
+              "currency": "CHF",
+              "default": 10000,
+              "maximum": 50000
+            },
+            {
+              "currency": "MYR",
+              "default": 50000,
+              "maximum": 250000
+            },
+            {
+              "currency": "ILS",
+              "default": 40000,
+              "maximum": 200000
+            },
+            {
+              "currency": "DKK",
+              "default": 65000,
+              "maximum": 325000
+            },
+            {
+              "currency": "NOK",
+              "default": 100000,
+              "maximum": 500000
+            },
+            {
+              "currency": "SEK",
+              "default": 100000,
+              "maximum": 500000
+            },
+            {
+              "currency": "PLN",
+              "default": 40000,
+              "maximum": 200000
+            },
+            {
+              "currency": "MXN",
+              "default": 170000,
+              "maximum": 850000
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

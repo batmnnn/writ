@@ -1,0 +1,40 @@
+{
+  "step": "capture_40",
+  "recorded_at": "2026-11-09T10:42:25.135Z",
+  "exchanges": [
+    {
+      "method": "POST",
+      "path": "/api/v1/simulation/issuing/card_transaction_lifecycles/01a1bfe6-cffb-7000-8598-ef4b9a0ffbfc/capture",
+      "status": 200,
+      "requestBody": {
+        "transaction_amount": 40,
+        "merchant_info": "WRIT PROBE SOFTWARE"
+      },
+      "responseBody": {
+        "card_transaction_event_id": "01a1bfe6-dde2-7000-9f7d-ad75bc4ac9c4",
+        "card_transaction_id": "01a1bfe6-cffb-7000-9bae-f38161402287",
+        "card_transaction_lifecycle_id": "01a1bfe6-cffb-7000-8598-ef4b9a0ffbfc",
+        "type": "CLEARING",
+        "subtype": "CLEARING",
+        "process_result": "APPROVED",
+        "transacted_at": "2026-11-09T10:42:20.770+0000",
+        "updated_at": "2026-11-09T10:42:22.971+0000",
+        "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+        "transaction_amount": 40,
+        "transaction_currency": "USD",
+        "billing_amount": 40,
+        "billing_currency": "USD",
+        "merchant": {
+          "name": "WRIT PROBE SOFTWARE______",
+          "city": "_____________",
+          "country": "",
+          "category_code": "7531"
+        },
+        "auth_code": "8PR0ZP",
+        "retrieval_ref": "629579287200",
+        "masked_card_number": "************1803",
+        "network_transaction_id": "[digits removed]"
+      }
+    }
+  ]
+}

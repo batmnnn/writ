@@ -1,0 +1,11 @@
+# vsock-proxy egress allowlist for the Writ enclave host.
+# Port 443 only. Exactly these six hosts. Anything else is refused by vsock-proxy.
+# The host forwards encrypted bytes. It never ends the connection and never sees plaintext.
+# test/enclave-parent.test.ts fails if this file and EGRESS_ALLOWLIST in src/host/enclave-parent.ts drift apart.
+allowlist:
+- {address: api.sandbox.airwallex.com, port: 443}
+- {address: kms.us-west-2.amazonaws.com, port: 443}
+- {address: s3.us-west-2.amazonaws.com, port: 443}
+- {address: secretsmanager.us-west-2.amazonaws.com, port: 443}
+- {address: acme-v02.api.letsencrypt.org, port: 443}
+- {address: acme-staging-v02.api.letsencrypt.org, port: 443}

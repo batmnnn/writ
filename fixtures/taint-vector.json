@@ -1,0 +1,26 @@
+{
+  "note": "Cross-language vector for the taint wire format. Signatures cover the UTF-8 bytes of canonical.",
+  "url": "https://gist.githubusercontent.com/writ-demo/raw/poisoned-page.html",
+  "event": {
+    "value": {
+      "seq": 7,
+      "at": "2026-11-12T10:15:00.000Z",
+      "urlSha256": "0293cb15047a716d96de158633446c16c2b9818b1c3a58a7274452bc27e4a4a4",
+      "runId": "run-ab12",
+      "agent": "research-agent"
+    },
+    "canonical": "{\"agent\":\"research-agent\",\"at\":\"2026-11-12T10:15:00.000Z\",\"runId\":\"run-ab12\",\"seq\":7,\"urlSha256\":\"0293cb15047a716d96de158633446c16c2b9818b1c3a58a7274452bc27e4a4a4\"}",
+    "sha256": "010f1a409168bac062d16b2263707ed01460d24469c2370c7f447b666bfe0261"
+  },
+  "ack": {
+    "value": {
+      "taintedAt": "2026-11-12T10:15:00.120Z",
+      "seq": 7,
+      "ok": true,
+      "runId": "run-ab12",
+      "agent": "research-agent"
+    },
+    "canonical": "{\"agent\":\"research-agent\",\"ok\":true,\"runId\":\"run-ab12\",\"seq\":7,\"taintedAt\":\"2026-11-12T10:15:00.120Z\"}",
+    "sha256": "d05fd07cc307be4e454f138e47230f94667e5a3e49c782fde52ae48f5ec42a07"
+  }
+}

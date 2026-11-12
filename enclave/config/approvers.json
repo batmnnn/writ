@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "approvers": [
+    {
+      "name": "demo",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAPGqAx8fo/A0Dv9SedTrtzZ/RmnRg/HKodSxBU4igiCI=\n-----END PUBLIC KEY-----\n"
+    }
+  ]
+}

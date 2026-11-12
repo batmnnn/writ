@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "ringFenceMinor": 2500000,
+  "reserveFloorMinor": 2000000,
+  "maxBalanceAgeMs": 60000,
+  "teams": [
+    {
+      "team": "research",
+      "poolLimitMinor": 50000
+    },
+    {
+      "team": "ops",
+      "poolLimitMinor": 1000000
+    }
+  ],
+  "cards": [
+    {
+      "cardId": "8886398c-265e-41f5-90d9-a6bcc296c03c",
+      "team": "research",
+      "agent": "research-1",
+      "last4": "9263"
+    },
+    {
+      "cardId": "8fd44640-b875-4070-a8a1-aa1aeb3586d6",
+      "team": "research",
+      "agent": "research-2",
+      "last4": "4131"
+    },
+    {
+      "cardId": "c226e659-c6d7-43e9-a1a7-8f7356cc8287",
+      "team": "research",
+      "agent": "research-3",
+      "last4": "7021"
+    },
+    {
+      "cardId": "90231932-2571-4f76-b160-97d2db592523",
+      "team": "research",
+      "agent": "research-agent",
+      "last4": "4605"
+    },
+    {
+      "cardId": "3487b254-3cda-46a8-a79f-26b498ca156d",
+      "team": "ops",
+      "agent": "ops-1",
+      "last4": "6760"
+    }
+  ]
+}

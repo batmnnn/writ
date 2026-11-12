@@ -1,0 +1,5 @@
+{
+  "keyArn": "arn:aws:kms:us-west-2:401046276943:key/04d013d8-fb9b-4261-bf67-4d87370a31bb",
+  "region": "us-west-2",
+  "proxyPort": 8000
+}

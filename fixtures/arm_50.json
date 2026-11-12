@@ -1,0 +1,97 @@
+{
+  "step": "arm_50",
+  "recorded_at": "2026-11-09T10:42:16.834Z",
+  "exchanges": [
+    {
+      "method": "POST",
+      "path": "/api/v1/issuing/cards/6ee295c1-0bca-4483-919c-d8bc9fd1fa3f/update",
+      "status": 200,
+      "requestId": "76974b9b-1195-4fc2-853a-fdc3669e5be6",
+      "requestBody": {
+        "request_id": "76974b9b-1195-4fc2-853a-fdc3669e5be6",
+        "card_status": "ACTIVE",
+        "authorization_controls": {
+          "transaction_limits": {
+            "currency": "USD",
+            "limits": [
+              {
+                "amount": 50,
+                "interval": "PER_TRANSACTION"
+              },
+              {
+                "amount": 50,
+                "interval": "ALL_TIME"
+              }
+            ]
+          },
+          "allowed_currencies": [
+            "USD"
+          ],
+          "allowed_merchant_categories": [
+            "5734"
+          ],
+          "active_to": "2026-11-09T11:42:16+0000"
+        }
+      },
+      "responseBody": {
+        "alert_settings": {
+          "low_remaining_transaction_limit": {
+            "enabled": true,
+            "percent": 10
+          }
+        },
+        "authorization_controls": {
+          "active_to": "2026-11-09T11:42:16.000+00:00",
+          "allowed_currencies": [
+            "USD"
+          ],
+          "allowed_merchant_brands": {
+            "categories": [],
+            "ids": [],
+            "subcategories": []
+          },
+          "allowed_merchant_categories": [
+            "5734"
+          ],
+          "allowed_merchant_countries": [],
+          "allowed_transaction_count": "MULTIPLE",
+          "blocked_transaction_usages": [],
+          "transaction_limits": {
+            "currency": "USD",
+            "limits": [
+              {
+                "amount": 50,
+                "interval": "PER_TRANSACTION"
+              },
+              {
+                "amount": 50,
+                "interval": "ALL_TIME"
+              }
+            ]
+          }
+        },
+        "brand": "VISA",
+        "card_id": "6ee295c1-0bca-4483-919c-d8bc9fd1fa3f",
+        "card_number": "[removed]",
+        "card_status": "ACTIVE",
+        "cardholder_id": "f14f3f54-4ecc-4653-9137-444f43834515",
+        "created_at": "2026-11-09T10:42:13.824+0000",
+        "created_by": "Writ Probe",
+        "form_factor": "VIRTUAL",
+        "is_personalized": true,
+        "metadata": {
+          "agent": "probe-1",
+          "team": "probe"
+        },
+        "name_on_card": "Writ Probe",
+        "program": {
+          "purpose": "COMMERCIAL",
+          "sub_type": "GOOD_FUNDS_CREDIT",
+          "type": "CREDIT"
+        },
+        "request_id": "06d57b36-e78c-42f5-b3bc-e5f174f84ced",
+        "updated_at": "2026-11-09T10:42:16.508+0000"
+      }
+    }
+  ]
+}

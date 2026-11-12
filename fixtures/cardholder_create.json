@@ -1,0 +1,51 @@
+{
+  "step": "cardholder_create",
+  "recorded_at": "2026-11-09T10:42:13.449Z",
+  "exchanges": [
+    {
+      "method": "POST",
+      "path": "/api/v1/issuing/cardholders/create",
+      "status": 202,
+      "requestBody": {
+        "type": "INDIVIDUAL",
+        "email": "writ-probe-64b8aba0@example.com",
+        "individual": {
+          "name": {
+            "first_name": "Writ",
+            "last_name": "Probe"
+          },
+          "date_of_birth": "1990-01-15",
+          "address": {
+            "line1": "100 Market St",
+            "city": "San Francisco",
+            "state": "CA",
+            "postcode": "94105",
+            "country": "US"
+          },
+          "express_consent_obtained": "yes"
+        }
+      },
+      "responseBody": {
+        "cardholder_id": "f14f3f54-4ecc-4653-9137-444f43834515",
+        "email": "writ-probe-64b8aba0@example.com",
+        "individual": {
+          "address": {
+            "city": "San Francisco",
+            "country": "US",
+            "line1": "100 Market St",
+            "postcode": "94105",
+            "state": "CA"
+          },
+          "date_of_birth": "1990-01-15",
+          "name": {
+            "first_name": "Writ",
+            "last_name": "Probe",
+            "name_on_card": "Writ Probe"
+          }
+        },
+        "status": "PENDING",
+        "type": "INDIVIDUAL"
+      }
+    }
+  ]
+}
