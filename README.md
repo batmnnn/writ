@@ -1,19 +1,49 @@
 # Writ
 
-Writ gives each AI agent in a company its own Airwallex virtual card. The cards stay frozen. Writ arms one card for one task a human signed, for that amount, that MCC and USD, and disarms it after one swipe. Before it arms, it checks the team pool shared by every agent card on the team ($500 in the demo), the company cash reserve against the live Airwallex balance (ring fence $25,000, floor $20,000), and whether the agent has read untrusted content since the writ was signed. The code that decides runs inside an AWS Nitro Enclave, and the Airwallex API key only unseals for that enclave image.
+Company cards for AI agents that can't spend past the task, the team budget or the cash reserve.
+
+The demo video is on [writ.batmnnn.live](https://writ.batmnnn.live).
 
 Built for the Airwallex Agentic Banking Hackathon, kit 2 (card issuing).
 
-The page is [writ.batmnnn.live](https://writ.batmnnn.live). The demo is on that page.
+## The problem
+
+A finance lead finds a $2,400 annual plan on the company card statement. Nobody asked for it. An AI agent bought it, and the $5,000 card limit let it through. That limit only sees its own card. The budget belongs to the team, and the cash belongs to the company. The finance lead is a composite, not an interviewed person.
+
+## What Writ does
+
+Each agent gets its own Airwallex virtual card, and the card stays frozen. A person signs a writ on their own device: one merchant, one MCC, one amount, USD, an expiry. Writ arms the card for that writ only, then freezes it again after one swipe. Airwallex refuses everything else at the bank.
+
+Before it arms a card, Writ checks four things. The first failure wins and the card stays frozen.
+
+1. **The writ.** Ed25519 signature, hash, expiry, used once, merchant, MCC, amount, currency.
+2. **The team pool**, shared by every agent card on the team. Two agents on a $500 pool: $180 plus $300 is $480, so the next $250 is refused (`TEAM_POOL_EXHAUSTED`).
+3. **The cash reserve**, against the live Airwallex balance. `min(live balance, ring fence) - open reservations - amount` must stay at or above the floor. A $6,000 spend that would leave $18,700 under a $20,000 floor is refused (`RESERVE_FLOOR`).
+4. **Taint.** If the agent read untrusted content after the writ was signed, the spend is refused (`TAINTED_RUN`) and the card is not armed. The Gateway marks the run before the page reaches the model, so the agent can't hide it.
+
+The code that decides runs inside an AWS Nitro Enclave. The Airwallex API key decrypts only for the enclave image whose hash (PCR0) we publish.
+
+## Run it with no keys
+
+You need [Bun](https://bun.sh). No Airwallex keys, no AWS.
+
+```sh
+git clone https://github.com/batmnnn/writ writ && cd writ
+bun install
+bun test
+bun run check
+bun run demo --replay
+```
+
+`bun run demo --replay` runs the same `decide()` with a fake adapter in frozen mode. It prints four scenes: $180 at DataCo `AUTHORIZED`, $60 over a $480 of $500 pool `TEAM_POOL_EXHAUSTED`, a tainted run `TAINTED_RUN`, and a $180 that would leave the reserve at $19,920 under a $20,000 floor `RESERVE_FLOOR`. Optional page: `bun run console`, then open `http://127.0.0.1:3000`.
+
+`bun test` at Thu Nov 12, 18:41 IST, before the v6 build: 903 pass, 0 fail, 3 todo. That includes 100 sourced `decide()` scenarios plus 10 checked later (`test/scenario-world.test.ts`), the red team suite (`test/redteam.test.ts`) and property tests for the pool and the ledger chain.
+
+`bun run check` fails on any file with an em dash, a card number, something shaped like a key or secret, a `.env` file, a private key, or a banned word.
 
 ## What the official samples don't do
 
-The Airwallex samples (awx-devx/airwallex-agent-cards and awx-devx/airwallex-agentic-banking-aws) already do "agent proposes, code decides, human approves" with single-use cards. Writ adds:
-
-1. One team pool across many agent cards. Two agents on $500: $180 plus $300 is $480, so the next $250 is refused (`TEAM_POOL_EXHAUSTED`).
-2. A cash reserve check against the live Airwallex balance: `min(live balance, ring fence) - open reservations - amount` must stay at or above the floor.
-3. A taint freeze the agent can't hide. The Gateway marks the run tainted before the page reaches the model. A run tainted after approval can't spend.
-4. The deciding code runs in an attested enclave. In the AWS kit an adapter Lambda holds the Airwallex secret, so whoever can update that Lambda can spend. Here the key decrypts only for the enclave image whose PCR0 we publish.
+The Airwallex samples (awx-devx/airwallex-agent-cards and awx-devx/airwallex-agentic-banking-aws) already do "agent proposes, code decides, human approves" with single-use cards. Writ adds the team pool across many cards, the cash reserve check, and the taint freeze above. It also moves the decision into an attested enclave. In the AWS kit an adapter Lambda holds the Airwallex secret, so whoever can update that Lambda can spend. Here the key decrypts only for the enclave image whose PCR0 we publish.
 
 ## The claim, and what backs it
 
@@ -65,27 +95,9 @@ The KMS dev key id is `04d013d8-fb9b-4261-bf67-4d87370a31bb` (full ARN in D23). 
 
 A guessed RA signature during the host attack, about 18:46 IST, returned HTTP 200 DECLINED, "bad signature".
 
-## Run it with no keys
-
-You need [Bun](https://bun.sh). No Airwallex keys, no AWS.
-
-```sh
-git clone https://github.com/batmnnn/writ writ && cd writ
-bun install
-bun test
-bun run check
-bun run demo --replay
-```
-
-`bun test` at Thu Nov 12, 18:41 IST, before the v6 build: 903 pass, 0 fail, 3 todo. That includes 100 sourced `decide()` scenarios plus 10 checked later (`test/scenario-world.test.ts`), the red team suite (`test/redteam.test.ts`) and property tests for the pool and the ledger chain.
-
-`bun run check` fails on any file with an em dash, a card number, something shaped like a key or secret, a `.env` file, a private key, or a banned word.
-
-`bun run demo --replay` runs the same `decide()` with a fake adapter in frozen mode. It prints four scenes: $180 at DataCo `AUTHORIZED`, $60 over a $480 of $500 pool `TEAM_POOL_EXHAUSTED`, a tainted run `TAINTED_RUN`, and a $180 that would leave the reserve at $19,920 under a $20,000 floor `RESERVE_FLOOR`. Optional page: `bun run console`, then open `http://127.0.0.1:3000`.
-
-`bun run demo --host enclave` is the live run against the enclave. It needs the approver key on Shubham's Mac and sandbox keys, so judges can't run it. What it showed is below.
-
 ## What the live run showed (Thu Nov 12, image v6, about 18:47 IST)
+
+`bun run demo --host enclave` is the live run against the enclave. It needs the approver key on Shubham's Mac and sandbox keys, so judges can't run it.
 
 `bun run demo --host enclave` exited 0. It started with $0 held in the research pool. The same codes showed twice on v5 earlier the same afternoon (about 18:07 IST and about 18:12 IST).
 
