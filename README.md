@@ -4,6 +4,8 @@ Writ gives each AI agent in a company its own Airwallex virtual card. The cards 
 
 Built for the Airwallex Agentic Banking Hackathon, kit 2 (card issuing).
 
+The page is [writ.batmnnn.live](https://writ.batmnnn.live). The demo is on that page.
+
 ## What the official samples don't do
 
 The Airwallex samples (awx-devx/airwallex-agent-cards and awx-devx/airwallex-agentic-banking-aws) already do "agent proposes, code decides, human approves" with single-use cards. Writ adds:
